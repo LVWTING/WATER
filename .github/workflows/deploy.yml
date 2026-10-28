@@ -19,13 +19,16 @@ jobs:
 
       - name: Build
         run: |
+          DIR=$(dirname "$(find . -name package.json -not -path '*/node_modules/*' | head -1)")
+          echo "APP_DIR=$DIR" >> $GITHUB_ENV
+          cd "$DIR"
           npm install
           npm run build
 
       - name: Upload
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ env.APP_DIR }}/dist
 
   deploy:
     runs-on: ubuntu-latest
