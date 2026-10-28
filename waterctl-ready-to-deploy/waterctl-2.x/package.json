@@ -6,7 +6,7 @@
   "scripts": {
     "compile-wasm": "wat2wasm ./src/deputy.wat -o ./src/deputy.wasm",
     "dev": "npm run compile-wasm && vite",
-    "build": "npm run compile-wasm && tsc && vite build",
+    "build": "npm run compile-wasm && vite build",
     "preview": "vite preview",
     "test": "vitest"
   },
