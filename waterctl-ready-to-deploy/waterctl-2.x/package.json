@@ -1,0 +1,27 @@
+{
+  "name": "waterctl",
+  "private": true,
+  "version": "2.1.4",
+  "type": "module",
+  "scripts": {
+    "compile-wasm": "wat2wasm ./src/deputy.wat -o ./src/deputy.wasm",
+    "dev": "npm run compile-wasm && vite",
+    "build": "npm run compile-wasm && tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "@types/web-bluetooth": "^0.0.21",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.2",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-singlefile": "^2.2.0",
+    "vitest": "^3.1.1",
+    "wabt": "^1.0.37"
+  },
+  "dependencies": {
+    "water.css": "^2.1.1"
+  },
+  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
+}
